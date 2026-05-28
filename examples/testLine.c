@@ -13,6 +13,8 @@ void fractalTree(Turtle *, int, int);
 
 void levy(Turtle *, float, int);
 
+void fractalTreeM(Turtle *, float, int);
+
 int main(void){
   TurtleApp *app = turtleAppCreate(600, 600, "Test Line"); //parametros, titulo
     //TurtleApp es un struc
@@ -42,7 +44,9 @@ int main(void){
   
   //fractalTree(t, 100, 7);
 
-  levy(t, 100, 5);
+  //levy(t, 100, 5);
+
+  fractalTreeM(t, 100, 4);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
@@ -133,4 +137,25 @@ void levy(Turtle *t, float length, int depth){
     levy(t, length / sqrt(2), depth - 1);
 
     turtleLeft(t, 45.0);
+    }
+
+void fractalTreeM(Turtle *t, float length, int depth){
+    if (depth == 0){
+        return;
+        }
+    
+    turtleForward(t, length);
+    
+    turtleLeft(t, 30.0);
+    fractalTreeM(t, length * 0.6, depth - 1);
+
+    turtleRight(t, 30.0);
+    fractalTreeM(t, length * 0.6, depth - 1);
+
+    turtleRight(t, 30.0);
+    fractalTreeM(t, length * 0.6, depth - 1);
+
+    turtleLeft(t, 30.0);
+    turtleBackward(t, length);
+
     }
