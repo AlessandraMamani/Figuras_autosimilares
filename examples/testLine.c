@@ -87,8 +87,19 @@ void branch(Turtle *t, int length, int level){
 
     }
 
-void factalTree(Turtle *t, int length, int depth){
+void fractalTree(Turtle *t, int length, int depth){
     if (depth == 0  || length < 5)
         return;
+    
+    turtleForward(t, length);
+
+    turtleLeft(t, 30.0);
+    fractalTree(t, length * 0.7, depth - 1);
+
+    turtleRigth(t, 60.0);
+    fractalTree(t, length * 0.7, depth - 1);
+
+    turtleLeft(t, 30.0);
+    turtleBackward(turtle, length);
 
     }
