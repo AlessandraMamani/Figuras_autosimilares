@@ -86,3 +86,9 @@ void branch(Turtle *t, int length, int level){
     turtleBackward(t, length);
 
     }
+
+void factalTree(Turtle *t, int length, int depth){
+    if (depth == 0  || length < 5)
+        return;
+
+    }
