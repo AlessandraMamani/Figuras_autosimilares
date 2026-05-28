@@ -32,8 +32,13 @@ int main(void){
   //koch(t, 300, 4);
 
   //snowflit(t, 200, 2, 3);
+  
   turtleLeft(t, 90.0);
-  branch(t, 200, 3);
+  
+  //branch(t, 200, 3);
+  
+  fractalTree(t, 200, 3);
+
   turtleAppRun(app);
   turtleAppDestroy(app);
   return 0;
