@@ -15,6 +15,8 @@ void levy(Turtle *, float, int);
 
 void fractalTreeM(Turtle *, float, int);
 
+void fractalTreeD(Turtle *, float, int);
+
 int main(void){
   TurtleApp *app = turtleAppCreate(600, 600, "Test Line :3");
   if(app == NULL)
