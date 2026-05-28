@@ -98,13 +98,13 @@ void fractalTree(Turtle *t, int length, int depth){
     
     turtleForward(t, length);
 
-    turtleLeft(t, 30.0);
+    turtleLeft(t, 45.0);    //20 - 30
     fractalTree(t, length * 0.7, depth - 1);
 
-    turtleRight(t, 60.0);
+    turtleRight(t, 90.0);   //40 - 60
     fractalTree(t, length * 0.7, depth - 1);
 
-    turtleLeft(t, 30.0);
+    turtleLeft(t, 45.0);
     turtleBackward(t, length);
 
     }
