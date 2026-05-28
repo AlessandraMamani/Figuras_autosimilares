@@ -10,6 +10,8 @@ void branch(Turtle *, int, int);
 
 void fractalTree(Turtle *, int, int);
 
+void levy(Turtle *, float, int);
+
 int main(void){
   TurtleApp *app = turtleAppCreate(600, 600, "Test Line"); //parametros, titulo
     //TurtleApp es un struc
@@ -112,6 +114,5 @@ void fractalTree(Turtle *t, int length, int depth){
         turtleSetColor(t, 0, 200, 10); //Verde
     
     turtleBackward(t, length);
-    
 
     }
