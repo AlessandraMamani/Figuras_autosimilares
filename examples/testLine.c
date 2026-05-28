@@ -1,4 +1,5 @@
 #include "../turtlec.h"
+#include <math.h>
 
 void splitLine(Turtle *, int, int);
 
@@ -21,7 +22,7 @@ int main(void){
   Turtle *t = turtleAppGetTurtle(app);
 
   turtlePenUp(t); //Levanta su plumon ->no deja rastro
-  turtleGoTo(t, 300.0f, 600.0f); //Pega un salto -- hasta
+  turtleGoTo(t, 300.0f, 300.0f); //Pega un salto -- hasta
   turtlePenDown(t); //Baja la pluma
     //Dejamos a la tortuga en una posicion incial
 
@@ -35,11 +36,13 @@ int main(void){
 
   //snowflit(t, 200, 2, 3);
   
-  turtleLeft(t, 90.0);
+  //turtleLeft(t, 90.0);
   
   //branch(t, 200, 3);
   
-  fractalTree(t, 100, 7);
+  //fractalTree(t, 100, 7);
+
+  levy(t, 100, 5);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
@@ -115,4 +118,19 @@ void fractalTree(Turtle *t, int length, int depth){
     
     turtleBackward(t, length);
 
+    }
+
+void levy(Turtle *t, float length, int depth){
+    
+    if (depth == 0){
+        turtleForward(t, length);
+        return;
+        }
+    turtleLeft(t, 45.0);
+    levy(t, length / sqrt(2), depth - 1);
+
+    turtleRight(t, 90.0);
+    levy(t, length / sqrt(2), depth - 1);
+
+    turtleLeft(t, 45.0);
     }
