@@ -16,35 +16,18 @@ void levy(Turtle *, float, int);
 void fractalTreeM(Turtle *, float, int);
 
 int main(void){
-  TurtleApp *app = turtleAppCreate(600, 600, "Test Line"); //parametros, titulo
-    //TurtleApp es un struc
-  if(app == NULL) //app->puntero
+  TurtleApp *app = turtleAppCreate(600, 600, "Test Line :3");
+  if(app == NULL)
     return 1;
 
   Turtle *t = turtleAppGetTurtle(app);
 
-  turtlePenUp(t); //Levanta su plumon ->no deja rastro
-  turtleGoTo(t, 300.0f, 300.0f); //Pega un salto -- hasta
-  turtlePenDown(t); //Baja la pluma
-    //Dejamos a la tortuga en una posicion incial
+  turtlePenUp(t);
+  turtleGoTo(t, 300.0f, 300.0f);
+  turtlePenDown(t);
 
-  turtleSetColor(t, 255, 100, 0); //color del plumon
-  turtleSetSpeed(t, 5.0f); //Velocidad
-  //turtleForward(t, 300.0f); //dibuje una linea
-
-  //splitLine(t, 150, 1);
-    
-  //koch(t, 300, 4);
-
-  //snowflit(t, 200, 2, 3);
-  
-  //turtleLeft(t, 90.0);
-  
-  //branch(t, 200, 3);
-  
-  //fractalTree(t, 100, 7);
-
-  //levy(t, 100, 5);
+  turtleSetColor(t, 255, 100, 0); 
+  turtleSetSpeed(t, 5.0f);
 
   fractalTreeM(t, 100, 4);
 
@@ -58,8 +41,10 @@ void splitLine(Turtle *t, int length, int count){
         turtleForward(t, length);
         return;
         }
+
     splitLine(t, length / 2.0, count - 1);
     turtleLeft(t, 60.0);
+    
     splitLine(t, length / 2.0, count - 1);
     turtleRight(t, 60.0);
     }
@@ -69,25 +54,34 @@ void koch(Turtle *t, int length, int count){
         turtleForward(t, length);
         return;
         }
+    
     koch(t, length / 3.0, count - 1);
+    
     turtleLeft(t, 60.0);
     koch(t, length / 3.0, count - 1);
+    
     turtleRight(t, 120.0);
     koch(t, length / 3.0, count - 1);
+    
     turtleLeft(t, 60.0);
     koch(t, length / 3.0, count - 1);
     }
 
 void snowflit(Turtle *t, int length, int level, int count){
+    
     for(int i = 0; i < count; i++){
+        
         koch(t, length, level);
+        
         turtleRight(t, 120.0);
+        
         }
     }
 
 void branch(Turtle *t, int length, int level){
     if (level == 0)
         return;
+    
     turtleForward(t, length);
     
     turtleLeft(t, 30.0);
@@ -117,6 +111,7 @@ void fractalTree(Turtle *t, int length, int depth){
     
     if (depth > 5)
         turtleSetColor(t, 128, 64, 0); //Marron
+
     else 
         turtleSetColor(t, 0, 200, 10); //Verde
     
@@ -130,6 +125,7 @@ void levy(Turtle *t, float length, int depth){
         turtleForward(t, length);
         return;
         }
+    
     turtleLeft(t, 45.0);
     levy(t, length / sqrt(2), depth - 1);
 
