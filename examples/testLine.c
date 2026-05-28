@@ -8,6 +8,8 @@ void snowflit(Turtle *, int, int, int);
 
 void branch(Turtle *, int, int);
 
+void fractalTree(Turtle *, int, int);
+
 int main(void){
   TurtleApp *app = turtleAppCreate(600, 600, "Test Line"); //parametros, titulo
     //TurtleApp es un struc
