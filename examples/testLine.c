@@ -37,7 +37,7 @@ int main(void){
   
   //branch(t, 200, 3);
   
-  fractalTree(t, 200, 3);
+  fractalTree(t, 100, 7);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
@@ -93,16 +93,16 @@ void branch(Turtle *t, int length, int level){
     }
 
 void fractalTree(Turtle *t, int length, int depth){
-    if (depth == 0  || length < 5)
+    if (depth == 0  || length < 10)  //Diferentes profundiades
         return;
     
     turtleForward(t, length);
 
     turtleLeft(t, 45.0);    //20 - 30
-    fractalTree(t, length * 0.7, depth - 1);
+    fractalTree(t, length * 0.8, depth - 1); //Resolucion 0.6 - 0.7 - 0.8
 
     turtleRight(t, 90.0);   //40 - 60
-    fractalTree(t, length * 0.7, depth - 1);
+    fractalTree(t, length * 0.8, depth - 1);
 
     turtleLeft(t, 45.0);
     turtleBackward(t, length);
