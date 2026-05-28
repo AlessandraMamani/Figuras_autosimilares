@@ -98,13 +98,20 @@ void fractalTree(Turtle *t, int length, int depth){
     
     turtleForward(t, length);
 
-    turtleLeft(t, 45.0);    //20 - 30
+    turtleLeft(t, 30.0);    //20 - 30
     fractalTree(t, length * 0.8, depth - 1); //Resolucion 0.6 - 0.7 - 0.8
 
-    turtleRight(t, 90.0);   //40 - 60
+    turtleRight(t, 60.0);   //40 - 60
     fractalTree(t, length * 0.8, depth - 1);
 
-    turtleLeft(t, 45.0);
+    turtleLeft(t, 30.0);
+    
+    if (depth > 5)
+        turtleSetColor(t, 128, 64, 0); //Marron
+    else 
+        turtleSetColor(t, 0, 200, 10); //Verde
+    
     turtleBackward(t, length);
+    
 
     }
