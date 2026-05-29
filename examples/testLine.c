@@ -157,3 +157,10 @@ void fractalTreeM(Turtle *t, float length, int depth){
     turtleBackward(t, length);
 
     }
+
+void fractalTreeD(Turtle *t, float length, int depth){
+    if (depth == 0)
+        return;
+
+    
+    }    
