@@ -162,5 +162,13 @@ void fractalTreeD(Turtle *t, float length, int depth){
     if (depth == 0)
         return;
 
-    
+   turtleForward(t, length);
+
+   turtleLefth(t, 30.0);
+   fractalTreeD(t, length * 0.8, depth - 1);
+
+   turtleRigth(t, 60.0);
+   fractalTreeD(t, length * 0.5, depth - 1);
+
+   turtleBackward(t, length);
     }    
