@@ -36,7 +36,7 @@ int main(void){
   turtleSetSpeed(t, 5.0f);
   turtleLeft(t, 90.0);
     
-  fractalTreeP(t, 100, 5);
+  levyM(t, 100, 5);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
