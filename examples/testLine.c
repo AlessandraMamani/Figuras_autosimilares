@@ -17,6 +17,8 @@ void fractalTreeM(Turtle *, float, int);
 
 void fractalTreeD(Turtle *, float, int);
 
+void fractalTreeP(Turtle *, float, int);
+
 int main(void){
   TurtleApp *app = turtleAppCreate(600, 600, "Test Line :3");
   if(app == NULL)
@@ -174,3 +176,4 @@ void fractalTreeD(Turtle *t, float length, int depth){
 
    turtleBackward(t, length);
     }    
+
