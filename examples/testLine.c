@@ -201,3 +201,11 @@ void fractalTreeP(Turtle *t, float length, int depth){
     turtleBackward(t, length);
     
     }
+
+void levyM(Turtle *t, float length, int depth){
+    if (depth == 0){
+        turtleForward(t, length);
+        return;
+        }
+
+    }
