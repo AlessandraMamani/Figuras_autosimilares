@@ -208,6 +208,10 @@ void levyM(Turtle *t, float length, int depth){
         return;
         }
 
+    int red = (255 - depth * 40) < 0 ? 255 : (255 - depth * 40);
+    int green = (200 - depth * 25) < 0 ? 0 : (20 - depth * 25);
+    int blue = depth * 35 > 255 ? 255 : depth * 35;
+
     turtleLeft(t, 45.0);
     levyM(t, length / sqrt(2), depth - 1);
 
@@ -215,6 +219,5 @@ void levyM(Turtle *t, float length, int depth){
     levyM(t, length / sqrt(2), depth - 1);
 
     turtleLeft(turtle, 45.0);
-
 
     }
