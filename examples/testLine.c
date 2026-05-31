@@ -208,4 +208,13 @@ void levyM(Turtle *t, float length, int depth){
         return;
         }
 
+    turtleLeft(t, 45.0);
+    levyM(t, length / sqrt(2), depth - 1);
+
+    turtleRigth(t, 90.0);
+    levyM(t, length / sqrt(2), depth - 1);
+
+    turtleLeft(turtle, 45.0);
+
+
     }
