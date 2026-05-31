@@ -34,8 +34,9 @@ int main(void){
 
   turtleSetColor(t, 255, 100, 0); 
   turtleSetSpeed(t, 5.0f);
-
-  levyM(t, 100, 4);
+  turtleLeft(t, 90.0);
+    
+  fractalTreeP(t, 100, 5);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
@@ -203,23 +204,31 @@ void fractalTreeP(Turtle *t, float length, int depth){
     }
 
 void levyM(Turtle *t, float length, int depth){
-    if (depth == 0){
-        turtleForward(t, length);
-        return;
-        }
-
-    int red = (255 - depth * 40) < 0 ? 255 : (255 - depth * 40);
-    int green = (200 - depth * 25) < 0 ? 0 : (20 - depth * 25);
+    
+    int red = (255 - depth * 40) < 0 ? 0 : (255 - depth * 40);
+    int green = (200 - depth * 25) < 0 ? 0 : (200 - depth * 25);
     int blue = depth * 35 > 255 ? 255 : depth * 35;
 
     turtleSetColor(t, red, green, blue);
 
+    //turtleSetColor(t, depth * 40, depth * 50, 255 - depth * 30);
+    
+    if (depth == 0){
+        //turtleSetColor(t, red, green, blue);
+        turtleForward(t, length);
+        return;
+        }
+     
+
     turtleLeft(t, 45.0);
+    //turtleSetColor(t, 120, 0, 60);
     levyM(t, length / sqrt(2), depth - 1);
 
     turtleRight(t, 90.0);
+    //turtleSetColor(t, 34, 250, 140);
     levyM(t, length / sqrt(2), depth - 1);
 
     turtleLeft(t, 45.0);
+    
 
     }
