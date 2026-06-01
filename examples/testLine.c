@@ -21,6 +21,8 @@ void fractalTreeP(Turtle *, float, int);
 
 void levyM(Turtle *, float, int);
 
+void sierpinski(Turtle *t, float, int);
+
 int main(void){
   TurtleApp *app = turtleAppCreate(600, 600, "Test Line :3");
   if(app == NULL)
