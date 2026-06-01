@@ -38,7 +38,7 @@ int main(void){
   turtleSetSpeed(t, 5.0f);
   //turtleLeft(t, 90.0);
     
-  levyM(t, 100, 4);
+  sierpinski(t, 100, 0);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
