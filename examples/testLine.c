@@ -226,3 +226,18 @@ void levyM(Turtle *t, float length, int depth){
     turtleLeft(t, 45.0);
 
     }
+
+void sierpinski(Turtle *t, float length, int level){
+    
+    if (level == 0){
+        
+        for (int i=0; i < 3; i++){
+            turtleForward(t, length);
+            turtleLeft(t, 120.0);
+        }
+        
+        return;
+        }
+
+
+    }
