@@ -262,9 +262,15 @@ void sierpinski(Turtle *t, float length, int level){
     }
 
 void alfSierpinski(Turtle *t, float length, int level){
-    if (level == 0) 
+    if (level == 0){ 
+        for (int i = 0; i < 4; i++){
+        turtleForward(t, length);
+        turtleLeft(t, 90.0);
+        }
         return;
+    }
 
+    
 
 
     }
