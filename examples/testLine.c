@@ -260,3 +260,11 @@ void sierpinski(Turtle *t, float length, int level){
     turtleRight(t, 60.0);
 
     }
+
+void alfSierpinski(Turtle *t, float length, int level){
+    if (level == 0) 
+        return;
+
+
+
+    }
