@@ -23,6 +23,8 @@ void levyM(Turtle *, float, int);
 
 void sierpinski(Turtle *t, float, int);
 
+void alfSierpinski(Turtle *t, float, int);
+
 int main(void){
   TurtleApp *app = turtleAppCreate(600, 600, "Test Line :3");
   if(app == NULL)
@@ -38,7 +40,7 @@ int main(void){
   turtleSetSpeed(t, 5.0f);
   //turtleLeft(t, 90.0);
     
-  sierpinski(t, 100, 0);
+  sierpinski(t, 100, 2);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
@@ -238,6 +240,23 @@ void sierpinski(Turtle *t, float length, int level){
         
         return;
         }
+    
+    sierpinski(t, length / 2, level - 1);
+    
+    turtleForward(t, length / 2);
 
+    sierpinski(t, length / 2, level - 1);
+    
+    turtleBackward(t, length / 2);
+
+    turtleLeft(t, 60.0);
+    turtleForward(t, length / 2);
+    turtleRight(t, 60.0);
+
+    sierpinski(t, length / 2, level - 1);
+    
+    turtleLeft(t, 60.0);
+    turtleBackward(t, length / 2);
+    turtleRight(t, 60.0);
 
     }
